@@ -11,11 +11,14 @@ type User {
   profilePhoto: String
   createdAt: String!
   updatedAt: String
-  fullName: String
-  isDriving: Boolean!
-  isRiding: Boolean!
-  isTaken: Boolean!
-  lastLng: Float
-  lastLat: Float
-  lastOrientation: Float
+}
+
+type GetUserResponse {
+  user: [User]
+  ok: Boolean!
+  error: String
+}
+
+type Query {
+  GetUser(id: [Int]!): GetUserResponse!
 }
